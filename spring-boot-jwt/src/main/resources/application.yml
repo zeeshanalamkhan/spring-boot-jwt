@@ -1,0 +1,15 @@
+server:  port: 8082  
+spring:
+  application:
+    name: spring-boot-jwt
+    
+  datasource:    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: system
+    password: manager
+    
+  jpa:    database: ORACLE
+    generate-ddl: true
+    show-sql: true
+    hibernate:      ddl-auto: update
+      use-new-id-generator-mappings: false       security:  jwt:    token:      secret-key: secret-key      expire-length: 300000      UserController:  signin: Authenticates user and returns its JWT token.  signup: Creates user and returns its JWT token  delete: Deletes specific user by username  search: Returns specific user by username  me: Returns current user's data                
